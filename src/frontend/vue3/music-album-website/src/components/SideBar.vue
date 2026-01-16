@@ -48,16 +48,16 @@ const toggleTheme = () => {
 
 <template>
   <!-- 毛玻璃背景侧边栏 -->
-  <aside class="h-screen w-64 sticky top-0 left-0 z-40">
+  <aside class="h-screen w-64 z-40">
     <!-- 毛玻璃背景容器 - 亮色/深色主题 -->
     <div
       class="h-full bg-white/20 dark:bg-slate-900/40 backdrop-blur-md border-r border-white/30 dark:border-slate-700/50 shadow-lg overflow-y-auto transition-colors duration-300">
       <!-- Logo 区域 -->
       <div class="p-6 border-b border-white/20 dark:border-slate-700/50">
         <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
+          <div class="flex items-center gap-x-2">
             <div
-              class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+              class="w-10 h-10 bg-linear-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
               <Music class="text-white" :size="24" />
             </div>
             <h1 class="text-xl font-bold text-gray-900 dark:text-white">音乐库</h1>
@@ -99,10 +99,10 @@ const toggleTheme = () => {
       <div class="mx-4 border-t border-white/20 dark:border-slate-700/50"></div>
 
       <!-- 下方内容区域 -->
-      <div class="p-4 mt-4">
+      <div class="flex flex-col p-4 mt-4 gap-y-2">
         <!-- 当前播放 -->
         <div
-          class="bg-gradient-to-br from-purple-400/30 to-pink-400/30 dark:from-purple-900/40 dark:to-pink-900/40 backdrop-blur-md border border-white/30 dark:border-slate-700/50 rounded-lg p-4 mb-4 transition-colors duration-300">
+          class="bg-linear-to-br from-purple-400/30 to-pink-400/30 dark:from-purple-900/40 dark:to-pink-900/40 backdrop-blur-md border border-white/30 dark:border-slate-700/50 rounded-lg p-4 mb-4 transition-colors duration-300">
           <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">正在播放</h3>
           <p class="text-xs text-gray-700 dark:text-gray-400 truncate">暂无播放内容</p>
         </div>
@@ -111,7 +111,7 @@ const toggleTheme = () => {
         <div
           class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-white/20 dark:bg-slate-800/40 border border-white/30 dark:border-slate-700/50 transition-colors duration-300">
           <div
-            class="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+            class="w-8 h-8 bg-linear-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
             <User class="text-white" :size="16" />
           </div>
           <div class="flex-1 min-w-0">
