@@ -2,16 +2,16 @@
 import { ref } from 'vue'
 import VinylRecord from '@/components/VinylRecord.vue'
 
-const years = Array.from({ length: 31 }, (_, i) => 1980 + i) // 1980 - 2010
+// const years = Array.from({ length: 31 }, (_, i) => 1980 + i) // 1980 - 2010
 const currentYear = ref(1995) // 默认选中一个中间年份，后面可以改成中间值
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-950 text-slate-100 grid grid-cols-[1.2fr_2fr]">
+  <div class="dark:bg-slate-950 dark:text-slate-100 flex flex-col-reverse md:flex-row w-full h-full">
     <!-- 左侧：黑胶 + 年份选择 -->
-    <section class="relative flex flex-col items-center justify-center border-r border-slate-800 px-8 py-12">
+    <section class="flex flex-col w-full items-center justify-center px-8 py-12">
       <!-- 半张黑胶唱片占位 -->
-      <div class="flex justify-center items-center h-screen bg-black">
+      <div class="flex justify-center items-center w-full h-full">
         <VinylRecord />
       </div>
     </section>

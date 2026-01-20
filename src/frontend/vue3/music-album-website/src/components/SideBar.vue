@@ -48,7 +48,7 @@ const toggleTheme = () => {
 
 <template>
   <!-- 毛玻璃背景侧边栏 -->
-  <aside class="h-screen w-64 z-40">
+  <aside class="h-screen w-40 z-40 sm:w-64">
     <!-- 毛玻璃背景容器 - 亮色/深色主题 -->
     <div
       class="h-full bg-white/20 dark:bg-slate-900/40 backdrop-blur-md border-r border-white/30 dark:border-slate-700/50 shadow-lg overflow-y-auto transition-colors duration-300">
