@@ -1,0 +1,7 @@
+﻿services:
+  musicalbumwebsite.server:
+    image: musicalbumwebsite.server
+    build:
+      context: .
+      dockerfile: MusicAlbumWebsite.Server/Dockerfile
+
