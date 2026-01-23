@@ -8,13 +8,16 @@ const props = withDefaults(defineProps<{
   // 可见年份数
   visibleYearCount?: number,
 }>(), {
-  years: () => ["1970", "1980", "1990", "2000", "2010"],
+  years: () => ["2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", 
+  "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", 
+  "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", 
+  "1980"],
   visibleYearCount: 3
 })
 
 
 // 当前年份索引（指向中间那个）
-const currentIndex = ref(0)
+const currentIndex = ref(30)
 
 // 当前显示的年份（滑动窗口）
 const visibleYears = computed(() => {
@@ -28,21 +31,26 @@ const visibleYears = computed(() => {
 
 
 
-// 滚轮控制
+// 滚轮控制(带边界控制)
 function handleScroll(event: WheelEvent) {
   if (event.deltaY > 0) {
-    // 向下滚动
-    currentIndex.value--
+    // 向下滚动（年份减少）
+    if (currentIndex.value > 0) {
+      currentIndex.value--
+    }
   } else {
-    // 向上滚动
-    currentIndex.value++
+    // 向上滚动（年份增加）
+    if (currentIndex.value < props.years.length - 1) {
+      currentIndex.value++
+    }
   }
 }
+
 </script>
 
 
 <template>
-  <div class="aspect-square w-full max-h-128 max-w-lg flex justify-center items-center text-slate-100"
+  <div class="aspect-square w-full max-h-5xl max-w-5xl flex text-slate-100"
     @wheel.prevent="handleScroll">
     <!-- 黑胶唱片 -->
     <div class="w-full h-full relative rounded-full vinyl">
@@ -62,7 +70,7 @@ function handleScroll(event: WheelEvent) {
             :style="{ '--i': years.indexOf(year!) }">
             <!-- 标签 -->
             <div
-              :class="cn('absolute left-full top-1/2 -translate-1/2', i === Math.floor(visibleYears.length / 2) ? '' : '')">
+              :class="cn('absolute left-full top-1/2 -translate-1/2 transition-all duration-500', i === Math.floor(visibleYears.length / 2) ? '' : '')">
               {{ year }}
             </div>
           </div>
@@ -122,22 +130,27 @@ function handleScroll(event: WheelEvent) {
 }
 
 .year-container {
-  rotate: v-bind('currentIndex * (360 / years.length) + "deg"');
-  transition: all 0.5s ease;
+  rotate: v-bind('currentIndex * 30 + "deg"');
+  transition: all 0.6s ease;
 }
 
 .year-text-container {
-  rotate: calc(var(--i) * v-bind('-360 / years.length + "deg"'));
+  rotate: calc(var(--i) * -30deg);
+  font-size: clamp(0.1rem, 2vw, 3rem);
 
   &.active {
+    font-size: clamp(0.1rem, 4vw, 5rem);
+    font-weight: bold;
+    color: #b08d57;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
   }
 }
 
+
 .list-move,
 .year-slide-enter-active,
 .year-slide-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.6s ease;
 }
 
 .year-slide-enter-from {

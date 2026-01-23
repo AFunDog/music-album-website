@@ -11,8 +11,10 @@ const currentYear = ref(1995) // 默认选中一个中间年份，后面可以�
     <!-- 左侧：黑胶 + 年份选择 -->
     <section class="flex flex-col w-full items-center justify-center px-8 py-12">
       <!-- 半张黑胶唱片占位 -->
-      <div class="flex justify-center items-center w-full h-full">
-        <VinylRecord />
+      <div class="relative w-5xl h-256 overflow-hidden ">
+        <div class="absolute left-[-50%] top-0 w-full h-full">
+          <VinylRecord />
+        </div>
       </div>
     </section>
 
