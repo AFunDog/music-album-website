@@ -7,12 +7,12 @@ const viewTransition = ref('main');
 </script>
 
 <template>
-  <div class="grid grid-cols-[auto_1fr] w-screen">
+  <div class="flex flex-row w-screen h-screen">
     <!-- 侧边栏 -->
     <SideBar/>
 
     <!-- 内容区 -->
-    <main>
+    <main class="w-full h-full">
       <RouterView v-slot="{ Component }">
         <Transition :name="viewTransition">
           <component :is="Component" />

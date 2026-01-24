@@ -48,7 +48,7 @@ const toggleTheme = () => {
 
 <template>
   <!-- 毛玻璃背景侧边栏 -->
-  <aside class="h-screen w-40 z-40 sm:w-64">
+  <aside class="fixed md:static h-screen w-48 md:w-64 z-40 left-0 top-0 -translate-x-48 md:translate-0 text-sm transition-all shadow-lg">
     <!-- 毛玻璃背景容器 - 亮色/深色主题 -->
     <div
       class="h-full bg-white/20 dark:bg-slate-900/40 backdrop-blur-md border-r border-white/30 dark:border-slate-700/50 shadow-lg overflow-y-auto transition-colors duration-300">
@@ -57,10 +57,10 @@ const toggleTheme = () => {
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-x-2">
             <div
-              class="w-10 h-10 bg-linear-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
-              <Music class="text-white" :size="24" />
+              class="size-8 md:size-10 bg-linear-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+              <Music class="text-white md:scale-125" :size="20" />
             </div>
-            <h1 class="text-xl font-bold text-gray-900 dark:text-white">音乐库</h1>
+            <h1 class="text-base md:text-xl font-bold text-gray-900 dark:text-white">音乐库</h1>
           </div>
           <!-- 主题切换按钮 -->
           <button @click="toggleTheme"
@@ -85,7 +85,7 @@ const toggleTheme = () => {
       <!-- 菜单项 -->
       <nav class="p-4 space-y-2">
         <button v-for="item in menuItems" :key="item.id" @click="toggleMenu(item.id)" :class="[
-          'w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200',
+          'w-full flex items-center gap-x-2 px-4 py-3 rounded-lg transition-all duration-200',
           item.active
             ? 'bg-white/40 dark:bg-slate-700/60 text-gray-900 dark:text-white shadow-md'
             : 'text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-slate-800/40'
@@ -109,7 +109,7 @@ const toggleTheme = () => {
 
         <!-- 用户信息 -->
         <div
-          class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-white/20 dark:bg-slate-800/40 border border-white/30 dark:border-slate-700/50 transition-colors duration-300">
+          class="flex items-center gap-x-2 px-4 py-3 rounded-lg bg-white/20 dark:bg-slate-800/40 border border-white/30 dark:border-slate-700/50 transition-colors duration-300">
           <div
             class="w-8 h-8 bg-linear-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
             <User class="text-white" :size="16" />

@@ -7,19 +7,19 @@ const currentYear = ref(1995) // 默认选中一个中间年份，后面可以�
 </script>
 
 <template>
-  <div class="dark:bg-slate-950 dark:text-slate-100 flex flex-col-reverse md:flex-row w-full h-full">
+  <div class="dark:bg-slate-950 dark:text-slate-100 flex flex-col-reverse lg:flex-row justify-end lg:justify-baseline w-full h-full">
     <!-- 左侧：黑胶 + 年份选择 -->
-    <section class="flex flex-col w-full items-center justify-center px-8 py-12">
+    <section class="flex flex-col flex-1 w-full items-center justify-center min-w-0 min-h-0">
       <!-- 半张黑胶唱片占位 -->
-      <div class="relative w-5xl h-256 overflow-hidden ">
-        <div class="absolute left-[-50%] top-0 w-full h-full">
+      <div class="relative w-full h-full overflow-hidden ">
+        <div class="relative left-[-50%] top-0 w-full h-full">
           <VinylRecord />
         </div>
       </div>
     </section>
 
     <!-- 右侧：专辑展示区域 -->
-    <section class="px-10 py-12">
+    <section class="px-10 md:px-10 py-12 md:py-12">
       <header class="mb-8 flex items-baseline justify-between">
         <div>
           <h1 class="text-3xl font-bold tracking-tight">黑胶年代 · 黑主题</h1>
