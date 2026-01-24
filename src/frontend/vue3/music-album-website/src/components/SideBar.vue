@@ -51,9 +51,9 @@ const toggleTheme = () => {
   <aside class="fixed md:static h-screen w-48 md:w-64 z-40 left-0 top-0 -translate-x-48 md:translate-0 text-sm transition-all shadow-lg">
     <!-- 毛玻璃背景容器 - 亮色/深色主题 -->
     <div
-      class="h-full bg-white/20 dark:bg-slate-900/40 backdrop-blur-md border-r border-white/30 dark:border-slate-700/50 shadow-lg overflow-y-auto transition-colors duration-300">
+      class="h-full bg-white/20 dark:bg-neutral-900/40 backdrop-blur-md border-r border-white/30 dark:border-neutral-700/50 shadow-lg overflow-y-auto transition-colors duration-300">
       <!-- Logo 区域 -->
-      <div class="p-6 border-b border-white/20 dark:border-slate-700/50">
+      <div class="p-6 border-b border-white/20 dark:border-neutral-700/50">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-x-2">
             <div
@@ -66,7 +66,7 @@ const toggleTheme = () => {
           <button @click="toggleTheme"
             class="p-2 rounded-lg bg-white/30 dark:bg-slate-800/50 hover:bg-white/40 dark:hover:bg-slate-700/50 transition-colors"
             :title="isDark ? '切换为亮色模式' : '切换为深色模式'">
-            <Sun v-if="isDark" class="text-yellow-400" :size="18" />
+            <Sun v-if="isDark" class="text-amber-400" :size="18" />
             <Moon v-else class="text-slate-700" :size="18" />
           </button>
         </div>
@@ -76,7 +76,7 @@ const toggleTheme = () => {
       <div class="p-4 border-b border-white/20 dark:border-slate-700/50">
         <div class="relative">
           <input type="text" placeholder="搜索歌曲..."
-            class="w-full px-4 py-2 bg-white/30 dark:bg-slate-800/40 backdrop-blur-md border border-white/40 dark:border-slate-700/50 rounded-lg text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 dark:focus:ring-purple-500 focus:border-transparent transition-all" />
+            class="w-full px-4 py-2 bg-white/30 dark:bg-slate-800/40 backdrop-blur-md border border-white/40 dark:border-slate-700/50 rounded-lg text-gray-900 dark:text-white placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400 dark:focus:ring-amber-500 focus:border-transparent transition-all" />
           <Search class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400"
             :size="18" />
         </div>
@@ -102,14 +102,14 @@ const toggleTheme = () => {
       <div class="flex flex-col p-4 mt-4 gap-y-2">
         <!-- 当前播放 -->
         <div
-          class="bg-linear-to-br from-purple-400/30 to-pink-400/30 dark:from-purple-900/40 dark:to-pink-900/40 backdrop-blur-md border border-white/30 dark:border-slate-700/50 rounded-lg p-4 mb-4 transition-colors duration-300">
+          class="bg-linear-to-br from-neutral-400/30 to-amber-400/30 dark:from-neutral-900/40 dark:to-amber-900/40 backdrop-blur-md border border-white/30 dark:border-neutral-700/50 rounded-lg p-4 mb-4 transition-colors duration-300">
           <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">正在播放</h3>
           <p class="text-xs text-gray-700 dark:text-gray-400 truncate">暂无播放内容</p>
         </div>
 
         <!-- 用户信息 -->
         <div
-          class="flex items-center gap-x-2 px-4 py-3 rounded-lg bg-white/20 dark:bg-slate-800/40 border border-white/30 dark:border-slate-700/50 transition-colors duration-300">
+          class="flex items-center gap-x-2 px-4 py-3 rounded-lg bg-white/20 dark:bg-neutral-800/40 border border-white/30 dark:border-neutral-700/50 transition-colors duration-300">
           <div
             class="w-8 h-8 bg-linear-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
             <User class="text-white" :size="16" />
