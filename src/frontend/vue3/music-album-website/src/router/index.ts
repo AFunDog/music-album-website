@@ -1,5 +1,6 @@
 import BlackThemeView from '@/views/BlackThemeView.vue'
 import HomeView from '@/views/HomeView.vue'
+import WhiteThemeView from '@/views/WhiteThemeView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/black',
       name: 'black',
       component: BlackThemeView,
+    },
+    {
+      path: '/white',
+      name: 'white',
+      component: WhiteThemeView,
     }
   ],
 })
